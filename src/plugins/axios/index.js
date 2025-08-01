@@ -1,8 +1,12 @@
-// const { default: axios } = require("axios");
-import axios from "axios"
+// lib/api.ts
+import axios from 'axios';
 
-const axiosIns = axios.create({
-        baseURL: process.env.BACKEND || "http://localhost:4000/api/"
-})
+const API = axios.create({
+  baseURL: process.env.REACT_APP_API_BASE_URL, // from .env
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  withCredentials: true, // only needed if using cookies/sessions
+});
 
-export default axiosIns;
+export default API;
