@@ -2,8 +2,7 @@
 import axios from "axios"
 
 const axiosIns = axios.create({
-        // baseURL: "http://localhost:4000/api/"
-        baseURL: "https://backend.hra-steps.com/api/"
+        baseURL: process.env.BACKEND || "http://localhost:4000/api/"
 })
 
 export default axiosIns;
